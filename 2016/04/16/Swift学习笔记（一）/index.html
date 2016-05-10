@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Swift," />
 
 
 
@@ -80,15 +80,25 @@
 
 
 
-<meta name="description" content="Just a note.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="印迹">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="浮点数存在误差，不能用于精确计算（金额计算等）
+Swfit不会自动类型转换，不同数据类型（如Int与Int8）需明确转换成同类数据类型才能进行计算。
+switch找到匹配的case并执行该case的body后就会跳出switch，无需使用break。在匹配的case的body中可以使用fallthrough执行紧邻的下一个case的body而无需检查条件。
+元组（tuple）是一个数据组合体，该">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift学习笔记（一）">
+<meta property="og:url" content="http://yoursite.com/2016/04/16/Swift学习笔记（一）/index.html">
 <meta property="og:site_name" content="印迹">
-<meta property="og:description" content="Just a note.">
+<meta property="og:description" content="浮点数存在误差，不能用于精确计算（金额计算等）
+Swfit不会自动类型转换，不同数据类型（如Int与Int8）需明确转换成同类数据类型才能进行计算。
+switch找到匹配的case并执行该case的body后就会跳出switch，无需使用break。在匹配的case的body中可以使用fallthrough执行紧邻的下一个case的body而无需检查条件。
+元组（tuple）是一个数据组合体，该">
+<meta property="og:updated_time" content="2016-05-10T12:06:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="印迹">
-<meta name="twitter:description" content="Just a note.">
+<meta name="twitter:title" content="Swift学习笔记（一）">
+<meta name="twitter:description" content="浮点数存在误差，不能用于精确计算（金额计算等）
+Swfit不会自动类型转换，不同数据类型（如Int与Int8）需明确转换成同类数据类型才能进行计算。
+switch找到匹配的case并执行该case的body后就会跳出switch，无需使用break。在匹配的case的body中可以使用fallthrough执行紧邻的下一个case的body而无需检查条件。
+元组（tuple）是一个数据组合体，该">
 
 
 
@@ -106,7 +116,7 @@
   };
 </script>
 
-  <title> 归档 | 印迹 </title>
+  <title> Swift学习笔记（一） | 印迹 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,179 +225,162 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-<!--      
-        
-      
-      嗯..! 目前共计 4 篇日志。 继续努力。
--->
-      目前共计 4 篇日志。 
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/07/数学只是一个工具/" itemprop="url">
-              
-                <span itemprop="name">数学只是一个工具</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-07T02:14:29+08:00"
-              content="2016-05-07" >
-          05-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/20/中学数学笔记/" itemprop="url">
-              
-                <span itemprop="name">中学数学笔记</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-04-20T11:20:59+08:00"
-              content="2016-04-20" >
-          04-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/16/Swift学习笔记（一）/" itemprop="url">
-              
-                <span itemprop="name">Swift学习笔记（一）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-04-16T13:56:14+08:00"
-              content="2016-04-16" >
-          04-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/15/2016，深圳/" itemprop="url">
-              
-                <span itemprop="name">2016，深圳</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-04-15T21:47:40+08:00"
-              content="2016-04-15" >
-          04-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Swift学习笔记（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T13:56:14+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Programming-Language/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming Language</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>浮点数存在误差，不能用于精确计算（金额计算等）</li>
+<li>Swfit不会自动类型转换，不同数据类型（如Int与Int8）需明确转换成同类数据类型才能进行计算。</li>
+<li>switch找到匹配的case并执行该case的body后就会跳出switch，无需使用break。在匹配的case的body中可以使用fallthrough执行紧邻的下一个case的body而无需检查条件。</li>
+<li>元组（tuple）是一个数据组合体，该组合体被当作一个数据看待。</li>
+<li>字符串由一串character构成，每个character与一个统一码（Unicode）对应。有些character除了与其对应的统一码外，可以由其他两个统一码组合而成，swift视这两个character相同（==）。</li>
+<li>Stirng，Array，Dictionary是值类型（value type）。</li>
+<li>optional：String与String?是两个不同的数据类型。</li>
+<li>函数有内部参数名（internal parameter name）和外部参数名（external parameter name）。</li>
+<li>in-out参数不可以有默认值。variadic参数不可以作为in-out参数。</li>
+<li>函数也是一种数据类型，由参数和返回值构成。</li>
+<li>数值类型（value type）不允许自身的方法改变自身（self），需借助mutating关键字。</li>
+<li>free functions == global functions</li>
+<li>lazy修饰的变量只会计算一次。</li>
+<li>一个常量的类型如果是struct或者是enum（value type），他们的property即便是变量也不能修改。</li>
+<li>extension不支持添加存储属性（stored property）， 支持添加计算属性（computed property）。</li>
+<li>Objective-C所有的类都继承自根类（root class）NSObject，Swfit没有root class。</li>
+<li>Property observers are not triggered when the property value is change from within an initializer.</li>
+<li>Setting the active property on a constraint is preferable to calling addConstraint(_:) or removeConstraint(_:) youself.</li>
+</ol>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Swift/" rel="tag">#Swift</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/15/2016，深圳/" rel="next" title="2016，深圳">
+                <i class="fa fa-chevron-left"></i> 2016，深圳
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/20/中学数学笔记/" rel="prev" title="中学数学笔记">
+                中学数学笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -395,6 +388,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -414,8 +411,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -494,6 +500,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -596,11 +613,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
