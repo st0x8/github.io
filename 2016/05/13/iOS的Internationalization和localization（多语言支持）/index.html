@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -80,15 +80,30 @@
 
 
 
-<meta name="description" content="Just a note.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="印迹">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="今天介绍如何使iOS应用支持多语言。
+多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。
+Interface Builder中在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS的Internationalization和localization（多语言支持）">
+<meta property="og:url" content="http://yoursite.com/2016/05/13/iOS的Internationalization和localization（多语言支持）/index.html">
 <meta property="og:site_name" content="印迹">
-<meta property="og:description" content="Just a note.">
+<meta property="og:description" content="今天介绍如何使iOS应用支持多语言。
+多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。
+Interface Builder中在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/402200-bcad00d66e4eba01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/402200-e0de97e94a764365.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/402200-d502f79334c09f58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/402200-f571c7f3fcb9984b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/402200-72009be32458e8d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/402200-2117d55c45a2371d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/402200-d502f79334c09f58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-05-14T04:08:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="印迹">
-<meta name="twitter:description" content="Just a note.">
+<meta name="twitter:title" content="iOS的Internationalization和localization（多语言支持）">
+<meta name="twitter:description" content="今天介绍如何使iOS应用支持多语言。
+多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。
+Interface Builder中在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/402200-bcad00d66e4eba01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -106,7 +121,7 @@
   };
 </script>
 
-  <title> 印迹 </title>
+  <title> iOS的Internationalization和localization（多语言支持） | 印迹 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,9 +142,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +229,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -238,10 +251,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/13/iOS的Internationalization和localization（多语言支持）/" itemprop="url">
-                  iOS的Internationalization和localization（多语言支持）
-                </a>
+                iOS的Internationalization和localization（多语言支持）
               
             
           </h1>
@@ -300,9 +310,7 @@
       
 
       
-        
-          
-            <p>今天介绍如何使iOS应用支持多语言。</p>
+        <p>今天介绍如何使iOS应用支持多语言。</p>
 <p>多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。</p>
 <h3 id="Interface-Builder中"><a href="#Interface-Builder中" class="headerlink" title="Interface Builder中"></a>Interface Builder中</h3><p>在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言文件。</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/402200-bcad00d66e4eba01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Info -&gt; PROJECT -&gt; Localization"></p>
@@ -342,264 +350,57 @@
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>要保证Base.lproj文件完整，就是说该文件夹中的key－value对要保持完整，该文件夹中的资源在iOS设备上的语言你没有提供支持时使用。该文件的完整使App能在所有有不同语言的设备上正常使用。</p>
 <p>如果App在翻译前已经在模拟器或者真机上调试过，需要把App从调试设备上删除，项目clean后重新编译，这样才能使翻译生效。要保证clean得彻底，如下操作：点击Xcode顶栏中的Product，弹出菜单后按住option键不放，你会发现“clean”选项变成“clean Build Folder…“，点击clean Build Folder选项。</p>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/07/数学只是一个工具/" itemprop="url">
-                  数学只是一个工具
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-07T02:14:29+08:00" content="2016-05-07">
-              2016-05-07
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
-                    <span itemprop="name">Mathematics</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>数学是人类发明的工具。这个工具有使用价值，为了让它能更好地发挥作用，先人们不断对它进行补充、完善，发展成了如今这个庞然大物。</p>
-<p>数学是一个伟大的发明，凝聚了很多人的心血。但它只是一个工具，我认为不应该对它生出盲目的畏惧，要用平常心去了解它，学习如何正确地使用它，就像我们学习使用家用电器那样，最终让它发挥作用。</p>
-<p>以上想法是我在思考除数为什么不能为0时冒出的。除数为什么不能为0呢？这个规定完全是人为添加的，目的就是为了合乎逻辑。除法是乘法的逆运算，就是已知两个因数的积与其中一个因数，求另一个因数的运算。如果一个因数是0，积必定为0。如果被除数不为0，除数为0，就是说－－我有一个因数为0，积却不为0，这就矛盾了，所以干脆限定除数不能为0.</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/05/07/数学只是一个工具/" rel="next" title="数学只是一个工具">
+                <i class="fa fa-chevron-left"></i> 数学只是一个工具
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/04/15/2016，深圳/" itemprop="url">
-                  2016，深圳
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-15T21:47:40+08:00" content="2016-04-15">
-              2016-04-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>2016年3月27号到达深圳，已经19天过去了。这是我新建的Blog，Welcome！</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -607,6 +408,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -626,8 +431,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -706,6 +520,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Interface-Builder中"><span class="nav-number">1.</span> <span class="nav-text">Interface Builder中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序中"><span class="nav-number">2.</span> <span class="nav-text">程序中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单个类实现文件"><span class="nav-number">2.1.</span> <span class="nav-text">单个类实现文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个类实现文件"><span class="nav-number">2.2.</span> <span class="nav-text">多个类实现文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用生成的strings文件"><span class="nav-number">2.3.</span> <span class="nav-text">使用生成的strings文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新strings文件"><span class="nav-number">3.</span> <span class="nav-text">更新strings文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#storyboard或者xib文件"><span class="nav-number">3.1.</span> <span class="nav-text">storyboard或者xib文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NSLocalizedString"><span class="nav-number">3.2.</span> <span class="nav-text">NSLocalizedString</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">4.</span> <span class="nav-text">注意</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -808,6 +633,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
