@@ -161,16 +161,6 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -217,6 +207,256 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/24/Swift与Objective-C如何混合使用/" itemprop="url">
+                  Swift与Objective-C如何混合使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-24T12:35:10+08:00" content="2016-05-24">
+              2016-05-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Programming-Language/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming Language</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Programming-Language/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>用Swift做开发是必定要与Objective-C（后面简称OC）打交道的。如何在OC中使用Swift呢？反过来，如何在Swfit中使用OC呢？</p>
+<p>当你在OC项目中加入Swift文件时，或者在Swift项目中加入OC文件时，Xcode都会有如下提示，请选择创建。</p>
+<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogScreen%20Shot%202016-05-24%20at%2012.49.16%20PM.png" alt="选择创建"></p>
+<p>创建后，文件的名称是“项目名-Bridging-Header.h“。该文件在Swift中使用OC时用到。</p>
+<h3 id="在OC中使用Swift"><a href="#在OC中使用Swift" class="headerlink" title="在OC中使用Swift"></a>在OC中使用Swift</h3><p>在OC中使用的Swift类，必须是NSObject的子类。需要注意，OC无法处理Swift的struct类型。如果项目混合了OC与Swift，Xcode会自动创建名为“项目名-Swift.h”的文件。如果你OC文件需要用到某个Swift类，import该文件后，就可以用OC的语法使用该Swift类了。再次强调，该Swift类必须是NSObject的子类。</p>
+<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogScreen%20Shot%202016-05-24%20at%202.36.42%20PM.png" alt=""></p>
+<h3 id="在Swift中使用OC"><a href="#在Swift中使用OC" class="headerlink" title="在Swift中使用OC"></a>在Swift中使用OC</h3><p>在Swift中使用OC就更简单了。要在Swift中使用某个OC类，得让Swift知道该OC类的存在，在“项目名-Bridging-Header.h“文件中import该OC类即可。import后，就可以在所有的Swift类中用Swift语法使用该OC类。</p>
+<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogScreen%20Shot%202016-05-24%20at%202.49.12%20PM.png" alt=""></p>
+<p><a href="https://github.com/st0x8/SwiftWithOC" target="_blank" rel="external">Demo</a></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/19/iOS tips/" itemprop="url">
+                  iOS tips
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-19T18:22:06+08:00" content="2016-05-19">
+              2016-05-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>When the user changes the preferred text size and returns to the application, the table view will get reloaded.But the labels on the cell will not know about the new preferred text size.</li>
+<li>The content hugging proority is like a rubber band that is placed around a view. The rubber band makes the view not want to be bigger than its intrinsic contentsize in that dimension.</li>
+<li>Designated initializers are responsible for making sure that an instance’s properties all have values before initialization completes, thus making the instance ready to use.</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -639,7 +879,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -647,7 +887,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
