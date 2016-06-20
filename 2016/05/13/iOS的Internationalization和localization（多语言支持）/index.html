@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -81,15 +81,13 @@
 
 
 <meta name="description" content="今天介绍如何使iOS应用支持多语言。
-多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。
-Interface Builder中在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言">
+多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS的Internationalization和localization（多语言支持）">
 <meta property="og:url" content="http://yoursite.com/2016/05/13/iOS的Internationalization和localization（多语言支持）/index.html">
 <meta property="og:site_name" content="印迹">
 <meta property="og:description" content="今天介绍如何使iOS应用支持多语言。
-多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。
-Interface Builder中在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言">
+多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。">
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogone.png">
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogtwo.png">
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogthree.png">
@@ -97,12 +95,11 @@ Interface Builder中在storyboard上或xib文件上完成布局开发，然后�
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogfive.png">
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogsix.png">
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogthree.png">
-<meta property="og:updated_time" content="2016-05-14T05:37:05.000Z">
+<meta property="og:updated_time" content="2016-06-20T15:34:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的Internationalization和localization（多语言支持）">
 <meta name="twitter:description" content="今天介绍如何使iOS应用支持多语言。
-多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。
-Interface Builder中在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言">
+多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。">
 <meta name="twitter:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogone.png">
 
 
@@ -110,7 +107,7 @@ Interface Builder中在storyboard上或xib文件上完成布局开发，然后�
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
@@ -312,6 +309,7 @@ Interface Builder中在storyboard上或xib文件上完成布局开发，然后�
       
         <p>今天介绍如何使iOS应用支持多语言。</p>
 <p>多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。</p>
+<a id="more"></a>
 <h3 id="Interface-Builder中"><a href="#Interface-Builder中" class="headerlink" title="Interface Builder中"></a>Interface Builder中</h3><p>在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言文件。</p>
 <p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogone.png" alt="Info -&gt; PROJECT -&gt; Localization"></p>
 <p>完成添加后选中storyboard文件或者xib文件，返回Interface Builder。右侧工作栏选中第一项File inspector，点击Localization栏中的“Localize…”按钮后在该栏中会显示语言文件列表，勾选前面的勾，弹出框保持默认并确定。</p>
@@ -564,14 +562,14 @@ Interface Builder中在storyboard上或xib文件上完成布局开发，然后�
 
 <div class="theme-info">
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
 <!-- <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div> -->
 
@@ -636,6 +634,13 @@ Interface Builder中在storyboard上或xib文件上完成布局开发，然后�
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>

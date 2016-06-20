@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -95,7 +95,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
@@ -301,38 +301,12 @@
 
       
         
-          
-            <p>App的通知功能有时候会被用户不小心禁止，怎样做才能方便用户在“设置”中重新开启呢？可以使用URL scheme。iOS系统的“设置”有自己定义的URL scheme，通过访问这个URL就可以快速跳转到设置界面。</p>
-<p>首先声明要使用到的URL scheme</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/%202016-06-20%20at%209.54.36%20PM.png" alt=""></p>
-<p>跳转到“设置”首页<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let url = NSURL.init(string: &quot;prefs:root&quot;)!</span><br><span class="line">UIApplication.sharedApplication().openURL(url)</span><br></pre></td></tr></table></figure></p>
-<p>跳转到“通知”首页<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;prefs:root=NOTIFICATIONS_ID&quot;</span><br><span class="line">let url = NSURL.init(string: str)!</span><br><span class="line">UIApplication.sharedApplication().openURL(url)</span><br></pre></td></tr></table></figure></p>
-<p>跳转到自己App的“通知”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//注意是获取bundleIdentifier, Stack Overflow上一些回答居然说是BundleDisplayName。</span><br><span class="line">let identifier = NSBundle.mainBundle().bundleIdentifier!</span><br><span class="line">let str = &quot;prefs:root=NOTIFICATIONS_ID&amp;path=\(identifier)&quot;</span><br><span class="line">let url = NSURL.init(string: str)!</span><br><span class="line">UIApplication.sharedApplication().openURL(url)</span><br></pre></td></tr></table></figure></p>
-<p>首先获取自己App的bundleIdentifer，然后拼在<code>prefs:root=NOTIFICATIONS_ID&amp;path=</code>之后。这里要注意<code>NSBundle.mainBundle().bundleIdentifier</code>返回的是option类型，一定要转成String类型的，这样生成的url才是有效的。Option类型虽然可以直接与字符串拼合但会插入其他字符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str: String? = &quot;I am String&quot;</span><br><span class="line">print(str)</span><br></pre></td></tr></table></figure>
-<p>输出：”Optional(“I am String”)\n”</p>
-<p>跳转到“设置”中其他位置</p>
-<table>
-<thead>
-<tr>
-<th>URL Scheme</th>
-<th>位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>prefs:root=General</td>
-<td>通用</td>
-</tr>
-<tr>
-<td>prefs:root=General&amp;path=Network/VPN</td>
-<td>VPN</td>
-</tr>
-</tbody>
-</table>
-<p>可以到<a href="https://gist.github.com/phynet/471089a51b8f940f0fb4" target="_blank" rel="external">这里</a>查看更多可以跳转的地方，记得一定要多测试！</p>
-
-          
+          <p>App的通知功能有时候会被用户不小心禁止，怎样做才能方便用户在“设置”中重新开启呢？可以使用URL scheme。iOS系统的“设置”有自己定义的URL scheme，通过访问这个URL就可以快速跳转到设置界面。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/20/iOS跳转到指定应用在设置中的“通知”/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -454,18 +428,12 @@
 
       
         
-          
-            <p>用Swift做开发是必定要与Objective-C（后面简称OC）打交道的。如何在OC中使用Swift呢？反过来，如何在Swfit中使用OC呢？</p>
-<p>当你在OC项目中加入Swift文件时，或者在Swift项目中加入OC文件时，Xcode都会有如下提示，请选择创建。</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogScreen%20Shot%202016-05-24%20at%2012.49.16%20PM.png" alt="选择创建"></p>
-<p>创建后，文件的名称是“项目名-Bridging-Header.h“。该文件在Swift中使用OC时用到。</p>
-<h3 id="在OC中使用Swift"><a href="#在OC中使用Swift" class="headerlink" title="在OC中使用Swift"></a>在OC中使用Swift</h3><p>在OC中使用的Swift类，必须是NSObject的子类。需要注意，OC无法处理Swift的struct类型。如果项目混合了OC与Swift，Xcode会自动创建名为“项目名-Swift.h”的文件。如果你OC文件需要用到某个Swift类，import该文件后，就可以用OC的语法使用该Swift类了。再次强调，该Swift类必须是NSObject的子类。</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogScreen%20Shot%202016-05-24%20at%202.36.42%20PM.png" alt=""></p>
-<h3 id="在Swift中使用OC"><a href="#在Swift中使用OC" class="headerlink" title="在Swift中使用OC"></a>在Swift中使用OC</h3><p>在Swift中使用OC就更简单了。要在Swift中使用某个OC类，得让Swift知道该OC类的存在，在“项目名-Bridging-Header.h“文件中import该OC类即可。import后，就可以在所有的Swift类中用Swift语法使用该OC类。</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogScreen%20Shot%202016-05-24%20at%202.49.12%20PM.png" alt=""></p>
-<p><a href="https://github.com/st0x8/SwiftWithOC" target="_blank" rel="external">Demo</a></p>
-
-          
+          <p>用Swift做开发是必定要与Objective-C（后面简称OC）打交道的。如何在OC中使用Swift呢？反过来，如何在Swfit中使用OC呢？</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/24/Swift与Objective-C如何混合使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -575,49 +543,13 @@
 
       
         
-          
-            <p>今天介绍如何使iOS应用支持多语言。</p>
+          <p>今天介绍如何使iOS应用支持多语言。</p>
 <p>多语言支持本质是使用多个键值对列表，App在运行时根据当前机器的语言环境选择与该语言对应的列表。多语言的App都需要创建多个strings文件。</p>
-<h3 id="Interface-Builder中"><a href="#Interface-Builder中" class="headerlink" title="Interface Builder中"></a>Interface Builder中</h3><p>在storyboard上或xib文件上完成布局开发，然后在Xcode左侧的project navigator选中顶部项目名，在中间的编辑区中选中project，在Info中添加语言文件。</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogone.png" alt="Info -&gt; PROJECT -&gt; Localization"></p>
-<p>完成添加后选中storyboard文件或者xib文件，返回Interface Builder。右侧工作栏选中第一项File inspector，点击Localization栏中的“Localize…”按钮后在该栏中会显示语言文件列表，勾选前面的勾，弹出框保持默认并确定。</p>
-<p> <img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogtwo.png" alt=""></p>
-<p>这时Xcode左侧的project navigator中的storyboard文件名前面会出现一个三角号，点击三角号展开，选中strings文件进行翻译即可。</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogthree.png" alt="展开"></p>
-<h3 id="程序中"><a href="#程序中" class="headerlink" title="程序中"></a>程序中</h3><p>在原本使用字符串的地方用下面的方法代替：</p>
-<p><code>let str =  NSLocalizedString(&quot;翻译key&quot;, comment: &quot;注释&quot;)</code></p>
-<p><code>NSString *str = NSLocalizedString(@&quot;翻译key&quot;, comment: @&quot;注释&quot;)</code></p>
-<p>建议不要省略注释，使用命令行工具genstrings生成strings文件时会自动把注视添加到文件中。</p>
-<h4 id="单个类实现文件"><a href="#单个类实现文件" class="headerlink" title="单个类实现文件"></a>单个类实现文件</h4><p>类文件实现后，打开终端Terminal，使用cd命令定位到存放该类文件的文件夹。比如AnotherViewController.swift文件中使用了NSLocalizedString，需要对它翻译，它的存放路径为/Users/Roy/Localization/Localization/AnotherViewController.swift。<br>在Terminal使用下面的命令进行定位</p>
-<p><code>$ cd /Users/Roy/Localization/Localization/</code></p>
-<p>然后使用<code>$ genstrings AnotherViewController.swift</code>会在当前路径生成Localizable.strings文件。</p>
-<p>如果Objective-C类实现文件，把 AnotherViewController.swift改为AnotherViewController.m即可。</p>
-<h4 id="多个类实现文件"><a href="#多个类实现文件" class="headerlink" title="多个类实现文件"></a>多个类实现文件</h4><p>如果有多个类实现文件使用了NSLocalizedString，可以如下操作汇总生成Localizable.strings文件。<br>使用cd命令定位到项目文件的根目录，如果项目的存放路径为/Users/Roy/Localization/：<br><code>cd /Users/Roy/Localization/</code></p>
-<p>然后执行下面的命令：<br><code>find ./ -name &quot;*.swift&quot; -print0 | xargs -0 genstrings</code></p>
-<p>如果是Objective-C文件，把”*.swift”变为 “*.m”。</p>
-<p>如此操作后会在项目的根目录生成Localizable.strings文件。</p>
-<h4 id="使用生成的strings文件"><a href="#使用生成的strings文件" class="headerlink" title="使用生成的strings文件"></a>使用生成的strings文件</h4><p>把Localizable.strings文件加入到项目中：在Finder中把该文件拖到Xcode的project navigator中，注意弹出窗口，保证文件正确添加到target中。</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogfour.png" alt=""></p>
-<p>添加完，在Xcode的project navigator选中Localizable.strings文件，在右侧的工具栏中选中第一项Info，然后找到Localization栏点击“Localize…”按钮，出现下面对话框，选择Base后点击Localize按钮。</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogfive.png" alt=""></p>
-<p>此时project navigator栏中的Localizable.strings前回出现一个三角号，点击展开，选中对应语言版本进行翻译即可。</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogsix.png" alt=""></p>
-<h3 id="更新strings文件"><a href="#更新strings文件" class="headerlink" title="更新strings文件"></a>更新strings文件</h3><p>无论是Interface Builder还是程序中使用NSLocalizedString，当我们完成strings文件的添加后，如果继续添加需要翻译的内容－－比如在storyboard新增一个需要翻译的按钮，在程序中新增了一个NSLocalizedString，新增的条目并不会自动添加到对应语言的strings文件中，需要我们自己更新strings文件。</p>
-<h4 id="storyboard或者xib文件"><a href="#storyboard或者xib文件" class="headerlink" title="storyboard或者xib文件"></a>storyboard或者xib文件</h4><p>在storyboard或者xib文件中添加新的组件后，使用cd命令定位到文件的存放文件夹，使用下面的命令生成新的strings文件</p>
-<p><code>$ ibtool Main.storyboard --generate-strings-file NewMain.strings</code></p>
-<p>在Finder中找到NewMain.strings并打开，在打开的窗口中找到在storyboard或者xib文件中新增的组件对应的条目，复制到粘贴板。<br>在project navigator点击storyboard或者xib文件前的三角号展开</p>
-<p><img src="http://7xu1xn.com1.z0.glb.clouddn.com/blogthree.png" alt="展开"></p>
-<p>点击各语言的strings文件打开，把新增（粘贴板）的内容粘贴到文件中并翻译。各语言的strings文件都完成后，把NewMain.stirngs删除。</p>
-<h4 id="NSLocalizedString"><a href="#NSLocalizedString" class="headerlink" title="NSLocalizedString"></a>NSLocalizedString</h4><p>如果新增了一个类实现文件，如AnotherViewController.swift，使用了NSLocalizedString，要把新增的条目添加到已有的各语言的strings文件中。假如它的存放路径为/Users/Roy/Localization/Localization/Another/AnotherViewControler.swift，，如下操作：<br>cd定位到项目的Localization文件夹</p>
-<p><code>cd /Users/Roy/Localization/Localization/</code></p>
-<p>然后执行</p>
-<p><code>find ./ -name &quot;*.lproj&quot; -print0 | xargs -0 -I {} genstrings ./Another/AnotherViewControler.swift -a -o {}</code></p>
-<p>如果是Objective-C文件把AnotherViewControler.swift改为AnotherViewControler.m 即可。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>要保证Base.lproj文件完整，就是说该文件夹中的key－value对要保持完整，该文件夹中的资源在iOS设备上的语言你没有提供支持时使用。该文件的完整使App能在所有有不同语言的设备上正常使用。</p>
-<p>如果App在翻译前已经在模拟器或者真机上调试过，需要把App从调试设备上删除，项目clean后重新编译，这样才能使翻译生效。要保证clean得彻底，如下操作：点击Xcode顶栏中的Product，弹出菜单后按住option键不放，你会发现“clean”选项变成“clean Build Folder…“，点击clean Build Folder选项。</p>
-<p><a href="https://github.com/st0x8/Localization" target="_blank" rel="external">Demo</a></p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/13/iOS的Internationalization和localization（多语言支持）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -727,12 +659,12 @@
 
       
         
-          
-            <p>数学是人类发明的工具。这个工具有使用价值，为了让它能更好地发挥作用，先人们不断对它进行补充、完善，发展成了如今这个庞然大物。</p>
-<p>数学是一个伟大的发明，凝聚了很多人的心血。但它只是一个工具，我认为不应该对它生出盲目的畏惧，要用平常心去了解它，学习如何正确地使用它，就像我们学习使用家用电器那样，最终让它发挥作用。</p>
-<p>以上想法是我在思考除数为什么不能为0时冒出的。除数为什么不能为0呢？这个规定完全是人为添加的，目的就是为了合乎逻辑。除法是乘法的逆运算，就是已知两个因数的积与其中一个因数，求另一个因数的运算。如果一个因数是0，积必定为0。如果被除数不为0，除数为0，就是说－－我有一个因数为0，积却不为0，这就矛盾了，所以干脆限定除数不能为0.</p>
-
-          
+          <p>数学是人类发明的工具。这个工具有使用价值，为了让它能更好地发挥作用，先人们不断对它进行补充、完善，发展成了如今这个庞然大物。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/07/数学只是一个工具/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1009,14 +941,14 @@
 
 <div class="theme-info">
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
 <!-- <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div> -->
 
@@ -1081,6 +1013,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
 
   
 
