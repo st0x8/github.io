@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogfive.png">
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogsix.png">
 <meta property="og:image" content="http://7xu1xn.com1.z0.glb.clouddn.com/blogthree.png">
-<meta property="og:updated_time" content="2016-06-20T15:34:16.000Z">
+<meta property="og:updated_time" content="2016-06-21T08:47:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的Internationalization和localization（多语言支持）">
 <meta name="twitter:description" content="今天介绍如何使iOS应用支持多语言。
@@ -319,7 +319,7 @@
 <h3 id="程序中"><a href="#程序中" class="headerlink" title="程序中"></a>程序中</h3><p>在原本使用字符串的地方用下面的方法代替：</p>
 <p><code>let str =  NSLocalizedString(&quot;翻译key&quot;, comment: &quot;注释&quot;)</code></p>
 <p><code>NSString *str = NSLocalizedString(@&quot;翻译key&quot;, comment: @&quot;注释&quot;)</code></p>
-<p>建议不要省略注释，使用命令行工具genstrings生成strings文件时会自动把注视添加到文件中。</p>
+<p>建议不要省略注释，使用命令行工具genstrings生成strings文件时会自动把注释添加到文件中。</p>
 <h4 id="单个类实现文件"><a href="#单个类实现文件" class="headerlink" title="单个类实现文件"></a>单个类实现文件</h4><p>类文件实现后，打开终端Terminal，使用cd命令定位到存放该类文件的文件夹。比如AnotherViewController.swift文件中使用了NSLocalizedString，需要对它翻译，它的存放路径为/Users/Roy/Localization/Localization/AnotherViewController.swift。<br>在Terminal使用下面的命令进行定位</p>
 <p><code>$ cd /Users/Roy/Localization/Localization/</code></p>
 <p>然后使用<code>$ genstrings AnotherViewController.swift</code>会在当前路径生成Localizable.strings文件。</p>
@@ -345,7 +345,7 @@
 <p>然后执行</p>
 <p><code>find ./ -name &quot;*.lproj&quot; -print0 | xargs -0 -I {} genstrings ./Another/AnotherViewControler.swift -a -o {}</code></p>
 <p>如果是Objective-C文件把AnotherViewControler.swift改为AnotherViewControler.m 即可。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>要保证Base.lproj文件完整，就是说该文件夹中的key－value对要保持完整，该文件夹中的资源在iOS设备上的语言你没有提供支持时使用。该文件的完整使App能在所有有不同语言的设备上正常使用。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>要保证Base.lproj文件完整。该文件夹中的资源可以说是备用资源。如果某个用户手机上的语言你没提供支持，系统就使用该文件夹中的资源。保持该文件的完整使App能在任何语言的设备上正常使用。</p>
 <p>如果App在翻译前已经在模拟器或者真机上调试过，需要把App从调试设备上删除，项目clean后重新编译，这样才能使翻译生效。要保证clean得彻底，如下操作：点击Xcode顶栏中的Product，弹出菜单后按住option键不放，你会发现“clean”选项变成“clean Build Folder…“，点击clean Build Folder选项。</p>
 <p><a href="https://github.com/st0x8/Localization" target="_blank" rel="external">Demo</a></p>
 
